@@ -20,7 +20,7 @@ app.post("/", (req, res) => {
     res.json(result);
   });
 });
-const PORT = process.env.PORT || 8888;
-app.listen(PORT, () => {
+const port = process.env.PORT || 8888;
+app.listen(port, () => {
   console.log("Server started on http://localhost:8888");
 });
