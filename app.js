@@ -13,10 +13,16 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  PythonShell.run("model.py", {}, (err, result) => {
+  const { numP, glucose } = req.body;
+  let options = {
+    args: [numP, glucose]
+  };
+  console.log(numP, glucose);
+  PythonShell.run("model.py", options, (err, result) => {
     if (err) {
       throw err;
     }
+    console.log(result);
     res.json(result);
   });
 });
