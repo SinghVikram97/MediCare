@@ -13,12 +13,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  const { numP, glucose } = req.body;
   let options = {
-    args: [numP, glucose]
+    pythonPath: "/usr/bin/python3"
   };
-  console.log(numP, glucose);
-  PythonShell.run("model.py", options, (err, result) => {
+  PythonShell.run("predict.py", options, (err, result) => {
     if (err) {
       throw err;
     }
