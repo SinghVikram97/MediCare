@@ -29,7 +29,7 @@ class PredictDisease():
 
 def main():
     p = PredictDisease(sys.argv[1])
-    print(p.goToDoc(sys.arv[2:]))
+    print(p.goToDoc(sys.argv[2:]))
 
 
 
